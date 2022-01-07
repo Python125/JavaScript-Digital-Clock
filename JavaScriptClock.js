@@ -1,37 +1,18 @@
-body {
-    background: #110011;
-}
-@font-face {
-    font-family: "DS-Digital";
-    src: url("../digital_clock_javascript_version1/DS-DIGIT.TTF") format('truetype');
-    
-}
+function generateTime() {
+    let timeNow = new Date();
+ 
+    let hours = timeNow.getHours().toString().length < 2 ? "0" + timeNow.getHours() : timeNow.getHours();
+    let minutes = timeNow.getMinutes().toString().length < 2 ? "0" + timeNow.getMinutes() : timeNow.getMinutes();
+    let seconds = timeNow.getSeconds().toString().length < 2 ? "0" + timeNow.getSeconds() : timeNow.getSeconds();
 
-div {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+
+    let mainTime = `${hours}:${minutes}:${seconds}`;
+    document.getElementById("time").innerHTML = mainTime;
+  
 }
 
-h1 {
-    font-family: "DS-Digital";
-    color: limegreen;
-    font-size: 10rem;
-    text-align: center;   
-}
-
-/* Desktop First approach */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 5rem;
-        color: rgb(250, 250, 250);
-        text-align: center; 
-    }
-
+setInterval(() => {
+    generateTime();
+}, 1000);
 
 } 
-
