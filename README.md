@@ -1,3 +1,3 @@
-# JavaScriptClock
+# JavaScriptDigitalClock
 
 My first JavaScript project.
