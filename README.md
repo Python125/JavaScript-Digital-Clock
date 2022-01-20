@@ -1,1 +1,1 @@
-My first JavaScript project.
+My second JavaScript project.
